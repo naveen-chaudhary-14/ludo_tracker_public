@@ -1,0 +1,38 @@
+<% content_for :title, "Match ##{@match.id}" %>
+
+<div class="max-w-2xl mx-auto mt-8 p-6">
+  <!-- Notice -->
+  <% if notice %>
+    <div class="p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400" role="alert">
+      <%= notice %>
+    </div>
+  <% end %>
+
+  <!-- Match Details -->
+  <div class="bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700 p-6">
+    <h1 class="text-3xl font-bold mb-4 text-gray-900 dark:text-white">Match #<%= @match.id %></h1>
+    <p class="text-gray-700 dark:text-gray-300 mb-2">
+      <strong>Winner:</strong> Player <%= @match.winner_id %>
+    </p>
+    <p class="text-gray-700 dark:text-gray-300 mb-2">
+      <strong>Runner Up:</strong> Player <%= @match.runner_up_id %>
+    </p>
+    <p class="text-gray-700 dark:text-gray-300 mb-2">
+      <strong>Second Runner Up:</strong> Player <%= @match.second_runner_up_id %>
+    </p>
+    <p class="text-gray-700 dark:text-gray-300 mb-6">
+      <strong>Last:</strong> Player <%= @match.last_id %>
+    </p>
+  </div>
+
+  <!-- Actions -->
+  <div class="mt-6 flex space-x-4">
+    <%= link_to "Edit this match", root_path,
+      class: "inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg shadow-sm hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white" %>
+    <%= link_to "← Back to matches", root_path,
+      class: "inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg shadow-sm hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white" %>
+    <%= button_to "Destroy this match", @match, method: :delete, 
+      class: "inline-flex items-center px-4 py-2 text-sm font-medium text-red-700 bg-white border border-red-300 rounded-lg shadow-sm hover:bg-red-50 hover:text-red-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 dark:bg-gray-700 dark:text-red-400 dark:border-red-600 dark:hover:bg-gray-600 dark:hover:text-red-300",
+      form: { data: { turbo_confirm: "Are you sure?" } } %>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+<%= form_with(model: match, class: "max-w-md mx-auto space-y-6") do |form| %>
+  <% if match.errors.any? %>
+    <div class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
+      <h2 class="font-semibold mb-2"><%= pluralize(match.errors.count, "error") %> prohibited this match from being saved:</h2>
+      <ul class="list-disc list-inside space-y-1">
+        <% match.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <!-- Winner ID -->
+  <div>
+    <%= form.label :winner_id, class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
+    <%= form.collection_select :winner_id, @players, :id, :name, { prompt: "Select Winner" }, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg
+      focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5
+      dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white
+      dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
+  </div>
+
+  <!-- Runner Up ID -->
+  <div>
+    <%= form.label :runner_up_id, "Runner Up ID", class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
+    <%= form.collection_select :runner_up_id, @players, :id, :name, { prompt: "Select Runner Up" }, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg
+      focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5
+      dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white
+      dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
+  </div>
+
+  <!-- Second Runner Up ID -->
+  <div>
+    <%= form.label :second_runner_up_id, "Second Runner Up ID", class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
+    <%= form.collection_select :second_runner_up_id, @players, :id, :name, { prompt: "Select Second Runner Up" }, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg
+      focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5
+      dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white
+      dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
+  </div>
+
+  <!-- Last ID -->
+  <div>
+    <%= form.label :last_id, "Last ID", class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
+    <%= form.collection_select :last_id, @players, :id, :name, { prompt: "Select Last" }, class: "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg
+      focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5
+      dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white
+      dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
+  </div>
+
+  <!-- Submit -->
+  <div>
+    <%= form.submit "Save Match", class: "text-white bg-blue-700 hover:bg-blue-800
+      focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg
+      text-sm w-full sm:w-auto px-5 py-2.5 text-center
+      dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" %>
+  </div>
+<% end %>

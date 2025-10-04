@@ -1,0 +1,16 @@
+<% content_for :title, "Edit Player" %>
+
+<div class="max-w-2xl mx-auto mt-8 p-6 bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+  <!-- Page Title -->
+  <h1 class="text-2xl font-bold mb-6 text-gray-900 dark:text-white">Edit Player</h1>
+
+  <!-- Form -->
+  <%= render "form", player: @player %>
+  <!-- Links -->
+  <div class="mt-6 flex space-x-4">
+    <%= link_to "Show this player", root_path,
+      class: "inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg shadow-sm hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white" %>
+    <%= link_to "← Back to players", root_path,
+      class: "inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg shadow-sm hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white" %>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  winner: one
+  runner_up: one
+  second_runner_up: one
+  last: one
+
+two:
+  winner: two
+  runner_up: two
+  second_runner_up: two
+  last: two

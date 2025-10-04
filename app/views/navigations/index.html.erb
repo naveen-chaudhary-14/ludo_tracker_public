@@ -1,0 +1,37 @@
+<div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+  <div class="md:flex">
+    <div class="p-8">
+      <h1 class="font-bold text-4xl mb-4">Navigation</h1>
+      <h2 class="text-2xl font-semibold mb-2">Players (Resource)</h2>
+      <ul class="w-full text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white mb-4">
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          <%= link_to "List All Players", players_path, class: "block w-full" %>
+        </li>
+        <li class="w-full px-4 py-2 border-b border-gray-200 dark:border-gray-600">
+          <%= link_to "New Player", new_player_path, class: "block w-full" %>
+        </li>
+        <li class="w-full px-4 py-2 border-b border-gray-200 dark:border-gray-600">
+          Show Player (requires ID)
+        </li>
+        <li class="w-full px-4 py-2 rounded-b-lg">
+          Edit Player (requires ID)
+        </li>
+      </ul>
+      <h2 class="text-2xl font-semibold mb-2">Matches (Resource)</h2>
+      <ul class="w-full text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+        <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+          <%= link_to "List All Matches", matches_path, class: "block w-full" %>
+        </li>
+        <li class="w-full px-4 py-2 border-b border-gray-200 dark:border-gray-600">
+          <%= link_to "New Match", new_match_path, class: "block w-full" %>
+        </li>
+        <li class="w-full px-4 py-2 border-b border-gray-200 dark:border-gray-600">
+          Show Match (requires ID)
+        </li>
+        <li class="w-full px-4 py-2 rounded-b-lg">
+          Edit Match (requires ID)
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
