@@ -2862,3 +2862,101 @@ Started GET "/.well-known/appspecific/com.chrome.devtools.json" for ::1 at 2025-
   
 ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
   
+  [1m[35m (97.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "matches" CASCADE /*application='LudoTracker'*/[0m
+  [1m[35m (154.6ms)[0m  [1m[35mCREATE TABLE "matches" ("id" bigserial primary key, "winner_id" integer NOT NULL, "runner_up_id" integer NOT NULL, "second_runner_up_id" integer NOT NULL, "last_id" integer NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='LudoTracker'*/[0m
+  [1m[35m (102.0ms)[0m  [1m[35mCREATE INDEX "index_matches_on_last_id" ON "matches" ("last_id") /*application='LudoTracker'*/[0m
+  [1m[35m (82.5ms)[0m  [1m[35mCREATE INDEX "index_matches_on_runner_up_id" ON "matches" ("runner_up_id") /*application='LudoTracker'*/[0m
+  [1m[35m (82.2ms)[0m  [1m[35mCREATE INDEX "index_matches_on_second_runner_up_id" ON "matches" ("second_runner_up_id") /*application='LudoTracker'*/[0m
+  [1m[35m (82.2ms)[0m  [1m[35mCREATE INDEX "index_matches_on_winner_id" ON "matches" ("winner_id") /*application='LudoTracker'*/[0m
+  [1m[35m (79.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "player_matches" CASCADE /*application='LudoTracker'*/[0m
+  [1m[35m (91.1ms)[0m  [1m[35mCREATE TABLE "player_matches" ("id" bigserial primary key, "player_id" integer NOT NULL, "match_id" integer NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='LudoTracker'*/[0m
+  [1m[35m (82.1ms)[0m  [1m[35mCREATE INDEX "index_player_matches_on_match_id" ON "player_matches" ("match_id") /*application='LudoTracker'*/[0m
+  [1m[35m (82.8ms)[0m  [1m[35mCREATE INDEX "index_player_matches_on_player_id" ON "player_matches" ("player_id") /*application='LudoTracker'*/[0m
+  [1m[35m (83.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "players" CASCADE /*application='LudoTracker'*/[0m
+  [1m[35m (87.4ms)[0m  [1m[35mCREATE TABLE "players" ("id" bigserial primary key, "name" character varying, "total_win" integer, "points" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='LudoTracker'*/[0m
+  [1m[35m (92.0ms)[0m  [1m[35mALTER TABLE "matches" ADD CONSTRAINT "fk_rails_82a04214a3"
+FOREIGN KEY ("last_id")
+  REFERENCES "players" ("id")
+ /*application='LudoTracker'*/[0m
+  [1m[35m (82.1ms)[0m  [1m[35mALTER TABLE "matches" ADD CONSTRAINT "fk_rails_c65f30f9f7"
+FOREIGN KEY ("runner_up_id")
+  REFERENCES "players" ("id")
+ /*application='LudoTracker'*/[0m
+  [1m[35m (81.7ms)[0m  [1m[35mALTER TABLE "matches" ADD CONSTRAINT "fk_rails_331c430fd9"
+FOREIGN KEY ("second_runner_up_id")
+  REFERENCES "players" ("id")
+ /*application='LudoTracker'*/[0m
+  [1m[35m (81.9ms)[0m  [1m[35mALTER TABLE "matches" ADD CONSTRAINT "fk_rails_9d0deeb219"
+FOREIGN KEY ("winner_id")
+  REFERENCES "players" ("id")
+ /*application='LudoTracker'*/[0m
+  [1m[35m (83.2ms)[0m  [1m[35mALTER TABLE "player_matches" ADD CONSTRAINT "fk_rails_da468b771a"
+FOREIGN KEY ("match_id")
+  REFERENCES "matches" ("id")
+ /*application='LudoTracker'*/[0m
+  [1m[35m (84.3ms)[0m  [1m[35mALTER TABLE "player_matches" ADD CONSTRAINT "fk_rails_e246beb82a"
+FOREIGN KEY ("player_id")
+  REFERENCES "players" ("id")
+ /*application='LudoTracker'*/[0m
+  [1m[35m (85.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY) /*application='LudoTracker'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (80.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='LudoTracker'*/[0m
+  [1m[35m (80.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20251003091025) /*application='LudoTracker'*/[0m
+  [1m[35m (83.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20251003090932),
+(20251003090818); /*application='LudoTracker'*/[0m
+  [1m[35m (82.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL) /*application='LudoTracker'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (82.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='LudoTracker'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (82.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-10-04 13:14:19.414555', '2025-10-04 13:14:19.414558') RETURNING "key" /*application='LudoTracker'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (79.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='LudoTracker'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (81.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'schema_sha1' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='LudoTracker'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (83.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', 'a61d323a90a794b6dc11e26918ee88be55dfa8a0', '2025-10-04 13:14:19.743383', '2025-10-04 13:14:19.743385') RETURNING "key" /*application='LudoTracker'*/[0m
+  [1m[35m (80.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(737815420147457505) /*application='LudoTracker'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (81.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='LudoTracker'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (81.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='LudoTracker'*/[0m
+  [1m[35m (78.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(737815420147457505) /*application='LudoTracker'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (80.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='LudoTracker'*/[0m
+Started GET "/" for ::1 at 2025-10-06 09:54:16 +0530
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  [1m[36mPlayer Load (0.7ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY "players"."total_win" DESC, "players"."points" DESC /*action='index',application='LudoTracker',controller='homepage'*/[0m
+  ↳ app/views/homepage/index.html.erb:7:in 'Enumerable#each_with_index'
+  Rendered homepage/_card.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered homepage/index.html.erb within layouts/application (Duration: 6.7ms | GC: 0.8ms)
+  Rendered homepage/_navbar.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.0ms | GC: 1.8ms)
+Completed 200 OK in 32ms (Views: 14.4ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 2.6ms)
+
+
+Started GET "/group/show/2" for ::1 at 2025-10-06 09:55:17 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/group/show/2"):
+  
+Started GET "/" for ::1 at 2025-10-06 12:22:16 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='LudoTracker'*/[0m
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY "players"."total_win" DESC, "players"."points" DESC /*action='index',application='LudoTracker',controller='homepage'*/[0m
+  ↳ app/views/homepage/index.html.erb:7:in 'Enumerable#each_with_index'
+  Rendered homepage/_card.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered homepage/index.html.erb within layouts/application (Duration: 10.8ms | GC: 0.0ms)
+  Rendered homepage/_navbar.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 28.0ms | GC: 0.0ms)
+Completed 200 OK in 73ms (Views: 32.1ms | ActiveRecord: 2.6ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/matches/new" for ::1 at 2025-10-06 12:22:20 +0530
+Processing by MatchesController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering matches/new.html.erb within layouts/application
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players" /*action='new',application='LudoTracker',controller='matches'*/[0m
+  ↳ app/views/matches/_form.html.erb:16
+  Rendered matches/_form.html.erb (Duration: 5.5ms | GC: 0.0ms)
+  Rendered matches/new.html.erb within layouts/application (Duration: 6.5ms | GC: 0.0ms)
+  Rendered homepage/_navbar.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | GC: 0.0ms)
+Completed 200 OK in 29ms (Views: 8.0ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='LudoTracker'*/[0m
