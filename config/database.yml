@@ -27,6 +27,7 @@ production:
   primary:
     adapter: postgresql
     encoding: unicode
+    prepared_statements: false
     pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
     url: <%= ENV["DATABASE_URL"] %>
 
