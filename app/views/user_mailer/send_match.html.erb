@@ -1,0 +1,64 @@
+<div style="background-color:#1f2937; padding:16px; font-family:Arial, sans-serif; color:#ffffff; max-width:600px; margin:0 auto;">
+
+  <!-- Header -->
+  <p style="font-size:14px; font-weight:400; color:#9ca3af; margin-bottom:12px; text-align:center;">
+    Here are the winners
+  </p>
+
+  <% match = @match %>
+  <!-- Worldcup Winner -->
+  <h1 style="font-size:20px; font-weight:800; margin-bottom:12px; text-align:center; color:#ffffff; line-height:1.2;">
+    Worldcup Winner<br>
+    <span style="display:block; font-size:20px; font-weight:800; color:#ffffff; margin-top:2px;">
+      <%= match.winner.name.split(" ")[0] %>
+    </span>
+    <span style="display:inline-block; background-color:#bfdbfe; color:#1d4ed8; font-size:12px; font-weight:600; margin-top:4px; padding:2px 6px; border-radius:2px;">
+      Congratulations
+    </span>
+  </h1>
+
+  <!-- Top 4 -->
+  <h1 style="font-size:24px; font-weight:800; line-height:1.2; margin-bottom:8px; text-align:center; color:#ffffff;">
+    <span style="color:#3b82f6;">#1</span> <%= match.winner.name %>
+  </h1>
+
+  <h1 style="font-size:18px; font-weight:800; line-height:1.2; margin-bottom:6px; text-align:center; color:#ffffff;">
+    <span style="color:#3b82f6;">#2</span> <%= match.runner_up.name %>
+  </h1>
+
+  <h1 style="font-size:18px; font-weight:800; line-height:1.2; margin-bottom:6px; text-align:center; color:#ffffff;">
+    <span style="color:#3b82f6;">#3</span> <%= match.second_runner_up.name %>
+  </h1>
+
+  <h1 style="font-size:18px; font-weight:800; line-height:1.2; margin-bottom:6px; text-align:center; color:#d1d5db;">
+    <span style="color:#3b82f6;">#4</span> <%= match.last.name %>
+  </h1>
+
+  <p style="font-size:14px; font-weight:400; color:#9ca3af; text-align:center; margin-bottom:12px;">
+    Better luck next time !! <%= match.last.name %>
+  </p>
+
+  <!-- Table -->
+  <div style="overflow-x:auto; margin-top:12px; border-radius:6px; box-shadow:0 1px 3px rgba(0,0,0,0.1);">
+    <table style="width:100%; border-collapse:collapse; font-size:12px; text-align:left; color:#6b7280;">
+      <thead style="background-color:#f9fafb; color:#374151; text-transform:uppercase;">
+        <tr>
+          <th style="padding:8px 12px;">#</th>
+          <th style="padding:8px 12px;">Player Name</th>
+          <th style="padding:8px 12px;">Match Wins</th>
+          <th style="padding:8px 12px;">Points (+ New Gain)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% Player.all.each_with_index do |player,index| %>
+        <tr style="background-color:#ffffff;">
+          <th style="padding:8px 12px; font-weight:500; color:#111827;"><%= index + 1 %></th>
+          <td style="padding:8px 12px;"><%= player.name %></td>
+          <td style="padding:8px 12px;"><%= player.total_win %></td>
+          <td style="padding:8px 12px;"><%= player.points %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

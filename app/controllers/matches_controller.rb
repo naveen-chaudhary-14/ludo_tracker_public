@@ -28,6 +28,8 @@ def create
   respond_to do |format|
     if @match.save
       # update winner
+      UserMailer.with(match: @match).send_match.deliver_now
+
       winner = Player.find(@match.winner_id)
       winner.increment!(:total_win)
       winner.increment!(:points, 4)
@@ -43,7 +45,6 @@ def create
       # last place (no points, but you could track losses if you add that field)
       last_player = Player.find(@match.last_id)
       # last_player.increment!(:losses) if you add a column later
-
       format.html { redirect_to root_path, notice: "Match was successfully created." }
       format.json { render :show, status: :created, location: @match }
     else
