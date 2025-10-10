@@ -1,0 +1,45 @@
+<div class="card" role="group" aria-label="Match card">
+    <div class="card__header">
+      <h2 class="card__title">Match #<%= index + 1%> </h2>
+      <div class="card__meta"></div>
+    </div>
+
+    <div class="positions">
+      <!-- 1pos prominent -->
+      <div class="pos pos--top" title="1st position (On Max)">
+        <div class="pos__rank">1</div>
+        <div class="pos__text">
+          <p class="pos__name"><%= match.winner.name %></p>
+          <p class="pos__sub"> +4 points , +1 Win </p>
+        </div>
+      </div>
+
+      <!-- smaller 2,3,4 -->
+      <div class="pos pos--small" title="2nd position">
+        <div class="pos__rank">2</div>
+        <div class="pos__text">
+          <p class="pos__name"><%= match.runner_up.name %></p>
+          <p class="pos__sub"> +2 points </p>
+        </div>
+      </div>
+
+      <div class="pos pos--small" title="3rd position">
+        <div class="pos__rank">3</div>
+        <div class="pos__text">
+          <p class="pos__name"><%= match.second_runner_up.name %></p>
+          <p class="pos__sub"> +1 points</p>
+        </div>
+      </div>
+
+      <div class="pos pos--small" title="4th position">
+        <div class="pos__rank">4</div>
+        <div class="pos__text">
+          <p class="pos__name"><%= match.last.name %></p>
+          <p class="pos__sub"> 0 points </p>
+        </div>
+      </div>
+     <span style="color: gray;font-size: 10px;">
+      <%= match.created_at.strftime("%d %b %Y, %I:%M %p") %>
+     </span>
+    </div>
+  </div>

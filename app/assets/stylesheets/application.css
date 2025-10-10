@@ -8,3 +8,143 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+
+     :root{
+      --card-bg: #ffffff;
+      --card-border: #e6e9ef;
+      --accent: #1f6feb;
+      --muted: #6b7280;
+      --shadow: 0 6px 18px rgba(30,41,59,0.08);
+      --radius: 12px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    body{
+      background: #f3f6fb;
+      min-height: 100vh;
+      margin: 0;
+      padding: 24px;
+    }
+
+    .card {
+      margin-top: 6px ;
+      width: 340px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 18px;
+      box-sizing: border-box;
+    }
+
+    /* Header */
+    .card__header {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .card__title {
+      font-size: 18px;
+      font-weight: 800; /* bold */
+      letter-spacing: 0.2px;
+      margin: 0;
+    }
+
+    /* optional small meta next to title */
+    .card__meta {
+      font-size: 12px;
+      color: var(--muted);
+      background: #f1f5f9;
+      padding: 4px 8px;
+      border-radius: 999px;
+    }
+
+    /* positions list */
+    .positions {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin: 6px 0 0 0;
+    }
+
+    .pos {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      transition: transform .12s ease, box-shadow .12s ease;
+    }
+
+    .pos--top {
+      background: linear-gradient(90deg, rgba(31,111,235,0.06), rgba(31,111,235,0.02));
+      border: 1px solid rgba(31,111,235,0.12);
+    }
+
+    .pos:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 22px rgba(31,111,235,0.06);
+    }
+
+    .pos__rank {
+      min-width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      background: #fff;
+      border: 1px solid var(--card-border);
+      box-shadow: 0 1px 0 rgba(15,23,42,0.03);
+    }
+
+    .pos--top .pos__rank {
+      background: var(--accent);
+      color: white;
+      border: none;
+      box-shadow: none;
+    }
+
+    .pos__text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .pos__name {
+      font-size: 15px;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .pos__sub {
+      font-size: 12px;
+      color: var(--muted);
+      margin: 2px 0 0 0;
+    }
+
+    /* make the smaller ranks visually lighter */
+    .pos--small .pos__name {
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    .pos--small .pos__rank {
+      background: transparent;
+      color: var(--muted);
+      border: 1px dashed var(--card-border);
+    }
+
+    /* responsive tweak */
+    @media (max-width: 360px){
+      .card { width: 100%; padding: 14px; }
+      .card__title { font-size: 16px; }
+    }
+
+    .card-container{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }

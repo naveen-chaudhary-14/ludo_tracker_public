@@ -12,3 +12,11 @@
   </ul>
   </div>
 </div>
+
+
+
+<div class="card-container">
+  <% Match.all.each_with_index do |match,index|%>
+    <%= render "match_card", match: match, index: index %>
+  <% end %>
+</div>
