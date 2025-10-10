@@ -4754,3 +4754,8 @@ Processing by HomepageController#index as TURBO_STREAM
 Completed 200 OK in 99ms (Views: 11.0ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
 
 
+  [1m[36mPlayer Load (0.7ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY "players"."id" ASC LIMIT 1 /*application='LudoTracker'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='LudoTracker'*/[0m
+  [1m[36mPlayer Create (2.1ms)[0m  [1m[32mINSERT INTO "players" ("name", "total_win", "points", "created_at", "updated_at") VALUES (NULL, NULL, NULL, '2025-10-10 09:27:19.102797', '2025-10-10 09:27:19.102797') RETURNING "id" /*application='LudoTracker'*/[0m
+  [1m[36mTRANSACTION (7.8ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='LudoTracker'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='LudoTracker'*/[0m

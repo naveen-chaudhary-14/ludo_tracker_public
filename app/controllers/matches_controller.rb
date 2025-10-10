@@ -27,24 +27,11 @@ def create
 
   respond_to do |format|
     if @match.save
-      # update winner
+      begin
       UserMailer.with(match: @match).send_match.deliver_now
-
-      winner = Player.find(@match.winner_id)
-      winner.increment!(:total_win)
-      winner.increment!(:points, 4)
-
-      # update runner up
-      runner_up = Player.find(@match.runner_up_id)
-      runner_up.increment!(:points, 2)
-
-      # update second runner up
-      second_runner_up = Player.find(@match.second_runner_up_id)
-      second_runner_up.increment!(:points, 1)
-
-      # last place (no points, but you could track losses if you add that field)
-      last_player = Player.find(@match.last_id)
-      # last_player.increment!(:losses) if you add a column later
+      rescue
+        puts "Error while Delievering Message"
+      end
       format.html { redirect_to root_path, notice: "Match was successfully created." }
       format.json { render :show, status: :created, location: @match }
     else
@@ -71,22 +58,7 @@ end
   # DELETE /matches/1 or /matches/1.json
 # DELETE /matches/1 or /matches/1.json
 def destroy
-  # rollback player stats before destroying match
-  winner = Player.find(@match.winner_id)
-  winner.decrement!(:total_win)
-  winner.decrement!(:points, 4)
-
-  runner_up = Player.find(@match.runner_up_id)
-  runner_up.decrement!(:points, 2)
-
-  second_runner_up = Player.find(@match.second_runner_up_id)
-  second_runner_up.decrement!(:points, 1)
-
-  last_player = Player.find(@match.last_id)
-  # last_player.decrement!(:losses) if you add a losses column later
-
   @match.destroy!
-
   respond_to do |format|
     format.html { redirect_to matches_path, notice: "Match was successfully destroyed.", status: :see_other }
     format.json { head :no_content }
