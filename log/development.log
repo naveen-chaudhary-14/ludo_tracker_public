@@ -5923,3 +5923,358 @@ ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific
   
   [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='LudoTracker'*/[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='LudoTracker'*/[0m
+Started GET "/" for ::1 at 2025-10-11 07:34:56 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='LudoTracker'*/[0m
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY total_win DESC, points ASC /*action='index',application='LudoTracker',controller='homepage'*/[0m
+  ↳ app/views/homepage/index.html.erb:7:in 'Enumerable#each_with_index'
+  Rendered homepage/_card.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered homepage/_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered homepage/_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered homepage/_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered homepage/_card.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  [1m[36mMatch Load (0.2ms)[0m  [1m[34mSELECT "matches".* FROM "matches" /*action='index',application='LudoTracker',controller='homepage'*/[0m
+  ↳ app/views/homepage/index.html.erb:19:in 'Enumerable#each_with_index'
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1 /*action='index',application='LudoTracker',controller='homepage'*/[0m
+  ↳ app/views/homepage/_match_card.html.erb:12
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:21
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:29
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:37
+  Rendered homepage/_match_card.html.erb (Duration: 21.8ms | GC: 0.0ms)
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:12
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:21
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:29
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:37
+  Rendered homepage/_match_card.html.erb (Duration: 8.3ms | GC: 0.0ms)
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:12
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:21
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:29
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:37
+  Rendered homepage/_match_card.html.erb (Duration: 8.5ms | GC: 0.0ms)
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:12
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:21
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:29
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:37
+  Rendered homepage/_match_card.html.erb (Duration: 7.1ms | GC: 0.0ms)
+  [1m[36mCACHE Player Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:12
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 2 LIMIT 1 /*action='index',application='LudoTracker',controller='homepage'*/[0m
+  ↳ app/views/homepage/_match_card.html.erb:21
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 3 LIMIT 1 /*action='index',application='LudoTracker',controller='homepage'*/[0m
+  ↳ app/views/homepage/_match_card.html.erb:29
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 4 LIMIT 1 /*action='index',application='LudoTracker',controller='homepage'*/[0m
+  ↳ app/views/homepage/_match_card.html.erb:37
+  Rendered homepage/_match_card.html.erb (Duration: 10.4ms | GC: 0.0ms)
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 2 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:12
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 3 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:21
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:29
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 4 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:37
+  Rendered homepage/_match_card.html.erb (Duration: 9.0ms | GC: 0.0ms)
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 2 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:12
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:21
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 3 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:29
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 4 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:37
+  Rendered homepage/_match_card.html.erb (Duration: 8.1ms | GC: 0.0ms)
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 2 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:12
+  [1m[36mCACHE Player Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 3 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:21
+  [1m[36mCACHE Player Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 2 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:29
+  [1m[36mCACHE Player Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 3 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:37
+  Rendered homepage/_match_card.html.erb (Duration: 9.0ms | GC: 0.0ms)
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 4 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:12
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:21
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 3 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:29
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 2 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:37
+  Rendered homepage/_match_card.html.erb (Duration: 7.0ms | GC: 0.0ms)
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 2 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:12
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:21
+  [1m[36mCACHE Player Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 3 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:29
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 4 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:37
+  Rendered homepage/_match_card.html.erb (Duration: 10.1ms | GC: 0.0ms)
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:12
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 2 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:21
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 3 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:29
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 4 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:37
+  Rendered homepage/_match_card.html.erb (Duration: 7.6ms | GC: 0.0ms)
+  Rendered homepage/index.html.erb within layouts/application (Duration: 139.3ms | GC: 0.0ms)
+  Rendered homepage/_navbar.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 171.7ms | GC: 0.0ms)
+Completed 200 OK in 236ms (Views: 172.6ms | ActiveRecord: 4.7ms (46 queries, 40 cached) | GC: 0.5ms)
+
+
+Started GET "/" for ::1 at 2025-10-11 07:35:13 +0530
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  [1m[36mPlayer Load (0.3ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY total_win DESC, points ASC /*action='index',application='LudoTracker',controller='homepage'*/[0m
+  ↳ app/views/homepage/index.html.erb:7:in 'Enumerable#each_with_index'
+  Rendered homepage/_card.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  Rendered homepage/_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered homepage/_card.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered homepage/_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered homepage/_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mMatch Load (0.2ms)[0m  [1m[34mSELECT "matches".* FROM "matches" /*action='index',application='LudoTracker',controller='homepage'*/[0m
+  ↳ app/views/homepage/index.html.erb:19
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1 /*action='index',application='LudoTracker',controller='homepage'*/[0m
+  ↳ app/views/homepage/_match_card.html.erb:12
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 2 LIMIT 1 /*action='index',application='LudoTracker',controller='homepage'*/[0m
+  ↳ app/views/homepage/_match_card.html.erb:21
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 3 LIMIT 1 /*action='index',application='LudoTracker',controller='homepage'*/[0m
+  ↳ app/views/homepage/_match_card.html.erb:29
+  [1m[36mPlayer Load (0.3ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 4 LIMIT 1 /*action='index',application='LudoTracker',controller='homepage'*/[0m
+  ↳ app/views/homepage/_match_card.html.erb:37
+  Rendered homepage/_match_card.html.erb (Duration: 15.5ms | GC: 0.0ms)
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 2 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:12
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:21
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 3 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:29
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 4 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:37
+  Rendered homepage/_match_card.html.erb (Duration: 8.6ms | GC: 0.0ms)
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 4 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:12
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:21
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 3 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:29
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 2 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:37
+  Rendered homepage/_match_card.html.erb (Duration: 11.0ms | GC: 0.0ms)
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 2 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:12
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 3 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:21
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 2 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:29
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 3 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:37
+  Rendered homepage/_match_card.html.erb (Duration: 6.7ms | GC: 0.0ms)
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 2 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:12
+  [1m[36mCACHE Player Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:21
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 3 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:29
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 4 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:37
+  Rendered homepage/_match_card.html.erb (Duration: 10.1ms | GC: 0.0ms)
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 2 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:12
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 3 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:21
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:29
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 4 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:37
+  Rendered homepage/_match_card.html.erb (Duration: 6.3ms | GC: 0.0ms)
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:12
+  [1m[36mCACHE Player Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 2 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:21
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 3 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:29
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 4 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:37
+  Rendered homepage/_match_card.html.erb (Duration: 10.0ms | GC: 0.0ms)
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:12
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:21
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:29
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:37
+  Rendered homepage/_match_card.html.erb (Duration: 6.7ms | GC: 0.0ms)
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:12
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:21
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:29
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:37
+  Rendered homepage/_match_card.html.erb (Duration: 10.1ms | GC: 0.0ms)
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:12
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:21
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:29
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:37
+  Rendered homepage/_match_card.html.erb (Duration: 7.8ms | GC: 0.0ms)
+  [1m[36mCACHE Player Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:12
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:21
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:29
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:37
+  Rendered homepage/_match_card.html.erb (Duration: 10.2ms | GC: 0.0ms)
+  Rendered homepage/index.html.erb within layouts/application (Duration: 133.1ms | GC: 0.0ms)
+  Rendered homepage/_navbar.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 139.6ms | GC: 0.0ms)
+Completed 200 OK in 215ms (Views: 139.0ms | ActiveRecord: 4.6ms (46 queries, 40 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2025-10-11 07:36:57 +0530
+Processing by HomepageController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering homepage/index.html.erb within layouts/application
+  [1m[36mPlayer Load (0.3ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY total_win DESC, points ASC /*action='index',application='LudoTracker',controller='homepage'*/[0m
+  ↳ app/views/homepage/index.html.erb:7:in 'Enumerable#each_with_index'
+  Rendered homepage/_card.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered homepage/_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered homepage/_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered homepage/_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered homepage/_card.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  [1m[36mMatch Load (0.2ms)[0m  [1m[34mSELECT "matches".* FROM "matches" ORDER BY created_at DESC /*action='index',application='LudoTracker',controller='homepage'*/[0m
+  ↳ app/views/homepage/index.html.erb:19:in 'Enumerable#each_with_index'
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1 /*action='index',application='LudoTracker',controller='homepage'*/[0m
+  ↳ app/views/homepage/_match_card.html.erb:12
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 2 LIMIT 1 /*action='index',application='LudoTracker',controller='homepage'*/[0m
+  ↳ app/views/homepage/_match_card.html.erb:21
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 3 LIMIT 1 /*action='index',application='LudoTracker',controller='homepage'*/[0m
+  ↳ app/views/homepage/_match_card.html.erb:29
+  [1m[36mPlayer Load (0.2ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 4 LIMIT 1 /*action='index',application='LudoTracker',controller='homepage'*/[0m
+  ↳ app/views/homepage/_match_card.html.erb:37
+  Rendered homepage/_match_card.html.erb (Duration: 16.2ms | GC: 2.1ms)
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 2 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:12
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:21
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 3 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:29
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 4 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:37
+  Rendered homepage/_match_card.html.erb (Duration: 11.6ms | GC: 2.2ms)
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 4 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:12
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:21
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 3 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:29
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 2 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:37
+  Rendered homepage/_match_card.html.erb (Duration: 7.6ms | GC: 0.0ms)
+  [1m[36mCACHE Player Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 2 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:12
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 3 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:21
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 2 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:29
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 3 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:37
+  Rendered homepage/_match_card.html.erb (Duration: 9.8ms | GC: 0.0ms)
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 2 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:12
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:21
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 3 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:29
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 4 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:37
+  Rendered homepage/_match_card.html.erb (Duration: 6.5ms | GC: 0.0ms)
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 2 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:12
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 3 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:21
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:29
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 4 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:37
+  Rendered homepage/_match_card.html.erb (Duration: 9.8ms | GC: 1.8ms)
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:12
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 2 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:21
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 3 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:29
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 4 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:37
+  Rendered homepage/_match_card.html.erb (Duration: 6.7ms | GC: 0.0ms)
+  [1m[36mCACHE Player Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:12
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:21
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:29
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:37
+  Rendered homepage/_match_card.html.erb (Duration: 8.7ms | GC: 0.0ms)
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:12
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:21
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:29
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:37
+  Rendered homepage/_match_card.html.erb (Duration: 6.2ms | GC: 0.0ms)
+  [1m[36mCACHE Player Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:12
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:21
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:29
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:37
+  Rendered homepage/_match_card.html.erb (Duration: 10.1ms | GC: 0.9ms)
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:12
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:21
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:29
+  [1m[36mCACHE Player Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 1 LIMIT 1[0m
+  ↳ app/views/homepage/_match_card.html.erb:37
+  Rendered homepage/_match_card.html.erb (Duration: 6.7ms | GC: 0.0ms)
+  Rendered homepage/index.html.erb within layouts/application (Duration: 132.2ms | GC: 10.2ms)
+  Rendered homepage/_navbar.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 139.8ms | GC: 10.6ms)
+Completed 200 OK in 174ms (Views: 138.9ms | ActiveRecord: 4.6ms (46 queries, 40 cached) | GC: 11.9ms)
+
+

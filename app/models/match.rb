@@ -6,7 +6,8 @@ class Match < ApplicationRecord
 
   before_create :increment_player_points
   before_destroy :decrement_player_points
-
+  
+  scope :by_recent, ->{ order("created_at DESC") }
   private
 
   def increment_player_points
