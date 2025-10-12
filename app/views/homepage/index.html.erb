@@ -1,7 +1,7 @@
 <% content_for :title, "Ludo Tracker" %>
 <div class="max-w-4xl mx-auto mt-8 p-6 text-center">
   <h1 class="text-4xl font-bold mb-4 text-gray-900 dark:text-white">Welcome to Ludo Tracker</h1>
-  <p class="text-lg text-gray-700 dark:text-gray-300 mb-8">Manage your Ludo game players and matches easily.</p>
+  <p class="text-lg text-gray-700 dark:text-gray-300 mb-8">Total Matches played: <%= Player.all.sum("total_win") %></p>
   <div class="flex justify-center space-x-4">
   <ul class="w-full text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
       <% Player.by_rank.each_with_index do |player,index| %>
@@ -12,8 +12,6 @@
   </ul>
   </div>
 </div>
-
-
 
 <div class="card-container">
   <% Match.by_recent.each_with_index do |match,index|%>
