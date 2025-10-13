@@ -27,7 +27,7 @@
 
     .card {
       margin-top: 6px ;
-      width: 340px;
+      /* width: 340px; */
       background: var(--card-bg);
       border: 1px solid var(--card-border);
       border-radius: var(--radius);

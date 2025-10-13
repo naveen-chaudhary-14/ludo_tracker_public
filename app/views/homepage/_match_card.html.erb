@@ -6,11 +6,14 @@
 
     <div class="positions">
       <!-- 1pos prominent -->
+
       <div class="pos pos--top" title="1st position (On Max)">
-        <div class="pos__rank">1</div>
+        <div class="flex justify-center items-center ">
+          <%= image_tag "medal.png", class: "w-6 h-6 mb-3 rounded-6" %>
+        </div>
         <div class="pos__text">
-          <p class="pos__name"><%= match.winner.name %></p>
-          <p class="pos__sub"> +4 points , +1 Win </p>
+          <p class="pos__name flex "><%= match.winner.name %>  </p>
+          <p class="pos__sub bg-blue-800 p-1 rounded-md text-white">+4 points |  +1 Win </p>
         </div>
       </div>
 
