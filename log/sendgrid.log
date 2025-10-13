@@ -1,0 +1,6 @@
+# Logfile created on 2025-10-13 14:31:15 +0530 by logger.rb/v1.7.0
+I, [2025-10-13T14:31:16.083366 #19455]  INFO -- : SendGrid Response: 401 {"errors":[{"message":"Permission denied, wrong credentials","field":null,"help":null}]}
+I, [2025-10-13T14:32:39.715831 #19455]  INFO -- : SendGrid Response: 403 {"errors":[{"message":"The from address does not match a verified Sender Identity. Mail cannot be sent until this error is resolved. Visit https://sendgrid.com/docs/for-developers/sending-email/sender-identity/ to see the Sender Identity requirements","field":"from","help":null}]}
+I, [2025-10-13T14:37:30.855410 #19455]  INFO -- : SendGrid Response: 403 {"errors":[{"message":"The from address does not match a verified Sender Identity. Mail cannot be sent until this error is resolved. Visit https://sendgrid.com/docs/for-developers/sending-email/sender-identity/ to see the Sender Identity requirements","field":"from","help":null}]}
+I, [2025-10-13T14:38:30.795254 #19455]  INFO -- : SendGrid Response: 202 
+I, [2025-10-13T14:40:15.410431 #19455]  INFO -- : SendGrid Response: 202 
