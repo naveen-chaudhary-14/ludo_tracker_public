@@ -1,0 +1,31 @@
+<div class="w-full bg-gradient-to-b from-amber-100 via-orange-50 to-white border border-amber-300 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300 dark:from-amber-900 dark:via-orange-950 dark:to-black dark:border-amber-700">
+  <div class="px-6 pb-6">
+    <!-- Player Title -->
+<span class="bg-blue-100 text-blue-800 text-2xl font-semibold me-2 px-2.5 py-0.5 rounded-sm dark:bg-blue-200 dark:text-blue-800 ms-2"> <%= player_title(index) %> </span>
+
+    <!-- Player Name -->
+    <h1 class="flex items-center justify-center text-3xl font-extrabold text-amber-800 dark:text-amber-300 mt-4 tracking-wide">
+      <%= player.name %>
+    </h1>
+
+    <!-- Win Section -->
+    <div class="flex flex-col items-center justify-between my-6 bg-amber-50 dark:bg-amber-900/40 rounded-xl p-3 border border-amber-200 dark:border-amber-700">
+      <p class="text-2xl font-bold text-amber-800 dark:text-amber-200">
+        <%= player.total_win %> Times
+      </p>
+      <p class="text-lg text-amber-700 dark:text-amber-300 font-medium">
+        🥉 World Cup Winner
+      </p>
+    </div>
+
+    <!-- Points Section -->
+    <div class="flex flex-col items-center gap-2">
+      <%# <img class="w-12 h-12 rounded-full ring-2 ring-amber-500 shadow-md" src="/docs/images/people/profile-picture-5.jpg" alt=""> %>
+      <div class="font-medium text-amber-800 dark:text-amber-200 text-center">
+        <div class="text-sm text-amber-700 dark:text-amber-400">
+          <%= player.points %> Total Points
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

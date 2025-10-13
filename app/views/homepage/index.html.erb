@@ -5,8 +5,16 @@
   <div class="flex justify-center space-x-4">
   <ul class="w-full text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-white">
       <% Player.by_rank.each_with_index do |player,index| %>
-      <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
-        <%= render "card", player: player,index: index %>
+      <li class="w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600 flex justify-center items-center">
+        <% if index == 0%>
+        <%= render "card_gold", player: player,index: index %>
+        <% elsif index == 1 %>
+         <%= render "card_silver", player: player,index: index %>
+         <% elsif index == 2 %>
+         <%= render "card_bronze", player: player,index: index %>
+        <% else %>
+          <%= render "card_v1", player: player,index: index %>
+        <% end %>
       </li>
       <% end %>
   </ul>
